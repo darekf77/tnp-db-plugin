@@ -4,40 +4,51 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch Server isomorphic-lib-v2 for angular-lib-v2",
-      "program": "${workspaceFolder}/../isomorphic-lib-v2/run.js",
-      "cwd": "${workspaceFolder}/../isomorphic-lib-v2",
+      "name": "Launch Server standalone",
+      "program": "${workspaceFolder}/run.js",
       "args": [
-        "--ENVoverride=%7B%0A%20%20%20%20%22clientProjectName%22%3A%20%22angular-lib-v2%22%0A%7D"
+        "--ENVoverride=%7B%0A%20%20%20%20%22clientProjectName%22%3A%20%22tnp-db-plugin%22%0A%7D"
       ],
       "runtimeArgs": [
         "--nolazy",
         "-r",
         "ts-node/register",
         "--experimental-worker"
-      ],
-      "presentation": {
-        "group": "workspaceServers"
+      ]
+    },
+    {
+      "name": "Debugger with ng serve",
+      "type": "chrome",
+      "request": "launch",
+      "preLaunchTask": "Ng Serve",
+      "postDebugTask": "terminateall",
+      "sourceMaps": true,
+      "webRoot": "${workspaceFolder}",
+      "sourceMapPathOverrides": {
+        "webpack:/*": "${webRoot}/*",
+        "/./*": "${webRoot}/*",
+        "/tmp-src/*": "${webRoot}/*",
+        "/*": "*",
+        "/./~/*": "${webRoot}/node_modules/*"
       }
     },
     {
       "type": "node",
-      "request": "launch",
-      "name": "Launch Server isomorphic-lib-v2 for isomorphic-lib-v2",
-      "program": "${workspaceFolder}/run.js",
-      "args": [
-        "--ENVoverride=%7B%0A%20%20%20%20%22clientProjectName%22%3A%20%22isomorphic-lib-v2%22%0A%7D"
-      ],
-      "runtimeArgs": [
-        "--nolazy",
-        "-r",
-        "ts-node/register",
-        "--experimental-worker"
-      ],
-      "presentation": {
-        "group": "workspaceServers"
-      }
+      "request": "attach",
+      "name": "Attach to global cli tool",
+      "port": 9229,
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
     }
   ],
-  "compounds": []
+  "compounds": [
+    {
+      "name": "Debug backend/frontend",
+      "configurations": [
+        "Launch Server standalone",
+        "Debugger with ng serve"
+      ]
+    }
+  ]
 }
