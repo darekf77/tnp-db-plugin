@@ -1,22 +1,17 @@
 {
   "tnp": {
-    "resources": [
-      "README.md"
-    ],
+    "resources": [],
     "overrided": {
+      "linkedFolders": [],
       "ignoreDepsPattern": [],
+      "npmFixes": [],
       "includeAsDev": [],
       "includeOnly": [],
-      "dependencies": {},
-      "linkedFolders": [],
-      "npmFixes": []
+      "dependencies": {}
     },
     "smartContainerBuildTarget": "",
     "linkedRepos": [],
     "libReleaseOptions": {
-      "nodts": false,
-      "obscure": false,
-      "ugly": false,
       "cliBuildNoDts": false,
       "cliBuildObscure": false,
       "cliBuildUglify": false,
