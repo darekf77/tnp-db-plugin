@@ -1,33 +1,6 @@
 {
   "tnp": {
-    "resources": [],
-    "overrided": {
-      "linkedFolders": [],
-      "ignoreDepsPattern": [],
-      "npmFixes": [],
-      "includeAsDev": [],
-      "includeOnly": [],
-      "dependencies": {}
-    },
-    "smartContainerBuildTarget": "",
-    "linkedRepos": [],
-    "libReleaseOptions": {
-      "cliBuildNoDts": false,
-      "cliBuildObscure": false,
-      "cliBuildUglify": false,
-      "cliBuildIncludeNodeModules": false
-    },
-    "isCoreProject": false,
-    "useFramework": false,
-    "type": "isomorphic-lib",
-    "required": [],
-    "version": "v2",
-    "workerPlugins": {},
-    "license": "UNLICENSED",
-    "private": true,
-    "main": "index.js",
-    "isGenerated": false,
-    "requiredServers": []
+    "resources": []
   },
   "dependencies": {
     "@angular-devkit/build-angular": "~0.901.3",
