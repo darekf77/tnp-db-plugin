@@ -223,6 +223,6 @@
   "license": "UNLICENSED",
   "private": true,
   "name": "tnp-db-plugin",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "index.js"
 }
